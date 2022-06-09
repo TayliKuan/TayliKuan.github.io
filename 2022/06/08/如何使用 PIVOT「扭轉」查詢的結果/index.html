@@ -24,7 +24,7 @@
 <meta property="og:description" content="PIVOT 翻轉Table的方法在Oracle 和 SQLServer 都有現成的PIvot 樞紐分析函式可以用~ 公式如下 12345PIVOT ( &lt;aggregation function&gt;(&lt;column being aggregated&gt;)FOR [&lt;column that contains the values that will become colum">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-06-08T09:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-09T00:55:36.391Z">
+<meta property="article:modified_time" content="2022-06-09T01:14:49.955Z">
 <meta property="article:author" content="Tayli Kuan">
 <meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary_large_image">
@@ -365,16 +365,21 @@
 </thead>
 <tbody><tr>
 <td>A</td>
-<td>101</td>
+<td>102</td>
 <td>1</td>
 </tr>
 <tr>
 <td>A</td>
 <td>102</td>
-<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>A</td>
+<td>101</td>
+<td>1</td>
 </tr>
 </tbody></table>
-<p>註:<br>第一筆資料:CREATEDATE 時段範圍不對 X<br>第二筆資料:DELMK 為D註記 (表示已刪除) 已排除X<br>第三筆資料:TYPE1符合A , 有一筆KIND 1<br>第四筆資料:TYPE1符合A , 有一筆KIND 2<br>第五筆資料:TYPE1不符合<br>第六筆資料:雖TYPE1不符,但是TYPE2 符合A , 有一筆KIND 2</p>
+<p>註:<br>資料:CREATEDATE 時段範圍不對 X<br>資料:DELMK 為D註記 (表示已刪除) 已排除X<br>資料:TYPE1符合A , 有一筆KIND 101<br>資料:TYPE1符合A , 有一筆KIND 102<br>資料:TYPE1不符合<br>資料:雖TYPE1不符,但是TYPE2 符合A , 有一筆KIND 102</p>
 <h2 id="困擾"><a href="#困擾" class="headerlink" title="困擾"></a>困擾</h2><p>這樣查出來 會是一個 根據TYPE&#x3D;A 的多筆LIST<br>再由JAVA 跑FOR迴圈 一一塞入對應值 這也是我原先的做法~ (很笨 但不用多想XD)</p>
 <p>假設找出來 A的LIST 有10筆 迴圈就要跑十次<br>然後 TYPE有5種 合計就是5*10&#x3D;50次</p>
 <h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><p>我期望查出來 是一個 根據TYPE&#x3D;A 的單一筆統計好各KIND次數的資料<br>希望查出來的表是長這樣</p>
@@ -446,22 +451,28 @@
 </thead>
 <tbody><tr>
 <td>A</td>
-<td>101</td>
+<td>102</td>
 <td>1</td>
 </tr>
 <tr>
 <td>A</td>
 <td>102</td>
-<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>A</td>
+<td>101</td>
+<td>1</td>
 </tr>
 </tbody></table>
 <p>首先我們用KIND 當成查出來的欄位<br>所以以KIND角度來看~</p>
-<p><strong>使用sum(count) ?</strong><br>原因是把這個KIND的COUNT 加起來 我們上面的SQL已經加好了<br>也就是101 -&gt; 1 ,102 -&gt; 2</p>
+<p><strong>使用sum(count) ?</strong><br>原因是把這個KIND的COUNT 加起來<br>也就是<br>101 -&gt; 1<br>102 -&gt; 1+1&#x3D;2</p>
 <p><strong>那為何不用 count(count) ?</strong><br>以KIND角度來看 count 是指<br>針對 KIND&#x3D;101 這只有一筆資料 所以count &#x3D;1<br>KIND&#x3D;102 這也只有一筆資料 所以count &#x3D;1</p>
 <h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>技術債還是要還XD<br>剛好維護案看到一年半前自已寫的CODE<br>那時候也沒有研究特別得寫法<br>SA開的SQL就直接給他下去 手寫得很酸<br>現在終於有重構~ 靠著GOOGLE大神學了新寫法!<br>希望對大家有幫助~~~</p>
+<p>這段SQL 有寫在線上測試DB 歡迎實測~~~<br><a target="_blank" rel="noopener" href="http://sqlfiddle.com/#!4/d312be/3/0">http://sqlfiddle.com/#!4/d312be/3/0</a></p>
+<hr>
 <p>參考stackoverflow這篇<br>Using pivot on multiple columns of an Oracle row :<br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/23939244/using-pivot-on-multiple-columns-of-an-oracle-row">https://stackoverflow.com/questions/23939244/using-pivot-on-multiple-columns-of-an-oracle-row</a></p>
 <p>參考:<br><a target="_blank" rel="noopener" href="https://dotblogs.com.tw/SteveLiu/2019/05/21/173803">https://dotblogs.com.tw/SteveLiu/2019/05/21/173803</a></p>
-<p>補充:線上測試DB<br><a target="_blank" rel="noopener" href="http://sqlfiddle.com/#!4/42497/1">http://sqlfiddle.com/#!4/42497/1</a></p>
 <p>補充:如果要用 MySQL 和 Postgresql 請參考此篇(我沒用過XD)<br><a target="_blank" rel="noopener" href="https://dotblogs.com.tw/daniel/2018/05/09/172804">https://dotblogs.com.tw/daniel/2018/05/09/172804</a></p>
 
               
