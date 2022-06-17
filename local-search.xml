@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>如何匯入.zip in Eclipse</title>
+    <link href="/2022/06/17/%E5%A6%82%E4%BD%95%E5%8C%AF%E5%85%A5.zip%20in%20Eclipse/"/>
+    <url>/2022/06/17/%E5%A6%82%E4%BD%95%E5%8C%AF%E5%85%A5.zip%20in%20Eclipse/</url>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有時候不是所有的Code都有Source可以Git Pull<br>像是進到一家新公司，舊的專案，可能只有剩下zip檔…<br>這時候要怎麼匯入整個專案呢?<br>這裡提供一個簡單的匯入方法!</p><h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p>我這裡用GitHub 先下載一個大神的zip做示範~~~</p><p><img src="https://i.imgur.com/yZ15XyP.png"></p><p><img src="https://i.imgur.com/F3iUIL8.png"></p><h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><p>到Eclipse 去import<br><img src="https://i.imgur.com/0VIiJC2.png"></p><h2 id="選最後一個"><a href="#選最後一個" class="headerlink" title="選最後一個!!!"></a>選最後一個!!!</h2><p><img src="https://i.imgur.com/kebepNB.png"></p><h2 id="選Archive-這很重要"><a href="#選Archive-這很重要" class="headerlink" title="選Archive 這很重要!!!!"></a>選Archive 這很重要!!!!</h2><p><img src="https://i.imgur.com/98YFx27.png"></p><p><img src="https://i.imgur.com/QaDGI9g.png"></p><p>選擇你要匯進來的專案~</p><p><img src="https://i.imgur.com/vrGnmQn.png"></p><h2 id="finish"><a href="#finish" class="headerlink" title="finish"></a>finish</h2><p><img src="https://i.imgur.com/ak6lYvK.png"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tech</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Eclipse</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>如何使用 PIVOT「扭轉」查詢的結果?</title>
     <link href="/2022/06/08/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%20PIVOT%E3%80%8C%E6%89%AD%E8%BD%89%E3%80%8D%E6%9F%A5%E8%A9%A2%E7%9A%84%E7%B5%90%E6%9E%9C/"/>
     <url>/2022/06/08/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%20PIVOT%E3%80%8C%E6%89%AD%E8%BD%89%E3%80%8D%E6%9F%A5%E8%A9%A2%E7%9A%84%E7%B5%90%E6%9E%9C/</url>
