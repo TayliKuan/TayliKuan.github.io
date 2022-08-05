@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>如何使用 程式碼追踪功能 in Eclipse</title>
+    <link href="/2022/08/05/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%20%E7%A8%8B%E5%BC%8F%E7%A2%BC%E8%BF%BD%E8%B8%AA%E5%8A%9F%E8%83%BD%20in%20Eclipse/"/>
+    <url>/2022/08/05/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%20%E7%A8%8B%E5%BC%8F%E7%A2%BC%E8%BF%BD%E8%B8%AA%E5%8A%9F%E8%83%BD%20in%20Eclipse/</url>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>以前IDE不太熟，找問題都直接用File Search，後來發現IDE提供很多好用功能，減少大家錯誤獵殺的時間XD</p><p>除了最常見的功能 壓著ctrl會出現的<br>Open Declaration<br>Open Implemention<br><img src="https://i.imgur.com/40rSmuz.png"></p><hr><p>另外再介紹兩個我自己蠻喜歡的功能<br><strong>在方法或是class上 按下右鍵</strong><br><img src="https://i.imgur.com/gi7af4U.png"></p><h3 id="1-Open-Type-Hierarchy"><a href="#1-Open-Type-Hierarchy" class="headerlink" title="1.Open Type Hierarchy"></a>1.Open Type Hierarchy</h3><p>在StudentService按下右鍵選擇Open Type Hierarchy<br>就會出現他這整個class的結構!如下<br><img src="https://i.imgur.com/XDRSdhr.png"></p><p>有時候一個Service十幾個方法，兩三千行，一時之間難以找到你想用的方法，就可以看結構。這邊會顯示一個Type Hierarchy視窗，點下去它會帶你到導航到你想查看的方法位置上。</p><h3 id="2-Open-Call-Hierarchy"><a href="#2-Open-Call-Hierarchy" class="headerlink" title="2.Open Call Hierarchy"></a>2.Open Call Hierarchy</h3><p>在readAll()的方法上，按下右鍵選擇Open Call Hierarchy。<br><img src="https://i.imgur.com/aJSlode.png"></p><p>它會顯示有多少地方call過這方法，有時候寫一些共用方法，可以快速知道倒底誰呼叫過，這裡可以看出StudentController有去呼叫這方法來使用。<br><img src="https://i.imgur.com/xZxM6Zs.png"></p><p>這邊顯示Call Hierarchy視窗，點下去它也會帶你到導航到，呼叫這方法的位置上。</p><hr><p><strong>同場加映 顯示麵包屑</strong></p><h3 id="show-in-Breadcrumb"><a href="#show-in-Breadcrumb" class="headerlink" title="show in Breadcrumb"></a>show in Breadcrumb</h3><p>我們可以在class上按下右鍵<br><img src="https://i.imgur.com/gjnFs23.png"><br>上面就會出現一條這個class的檔案位置路徑。<br><img src="https://i.imgur.com/467HTcj.png"></p><p>或是想看全貌可以從Project Explorer樹狀結構看。<br><img src="https://i.imgur.com/AOfvKqC.png"></p><hr><h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>歡迎大家分享IDE小功能，減少DEBUG時間，希望這文章有幫助到大家XD</p><p>參考資料:<a href="https://tw-hkt.blogspot.com/2012/08/eclipse-ide.html?m=1">https://tw-hkt.blogspot.com/2012/08/eclipse-ide.html?m=1</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tech</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Eclipse</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>如何撤銷 Git push提交 in Eclipse</title>
     <link href="/2022/07/01/%E5%A6%82%E4%BD%95%E6%92%A4%E9%8A%B7%20Git%20push%E6%8F%90%E4%BA%A4%20in%20Eclipse/"/>
     <url>/2022/07/01/%E5%A6%82%E4%BD%95%E6%92%A4%E9%8A%B7%20Git%20push%E6%8F%90%E4%BA%A4%20in%20Eclipse/</url>
