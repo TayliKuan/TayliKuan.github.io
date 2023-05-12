@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>從 Oracle 17 的JDK 換到 OpenJDK 17</title>
+    <link href="/2023/05/12/%E5%BE%9EOracle17%E7%9A%84JDK%20%E6%8F%9B%E5%88%B0OpenJDK17/"/>
+    <url>/2023/05/12/%E5%BE%9EOracle17%E7%9A%84JDK%20%E6%8F%9B%E5%88%B0OpenJDK17/</url>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在寫一個新案子，要求用java17來進行開發，真是非常興奮XD<br>之前因為Oracle推出17的JDK時，想要推廣有提供免費試用到 2023&#x2F;9，我就安裝了Oracle 17的 JDK。</p><p>近期公司很認真提醒著大家，眼看時間要到了~<br>就是現在要換回OpenJDK 17 !!!</p><p>我們知道Oracle 改變java的歷史 XD<br>自從Oracle 收購Sun以後，很多東西都變了8之後的版本要付費，不然不得商用…</p><p>😜😜😜 <strong>於是我選擇改用長期貢獻於開源的 RedHat - OpenJDK 17 ~~</strong></p><hr><h2 id="步驟-1-5"><a href="#步驟-1-5" class="headerlink" title="步驟 1-5"></a>步驟 1-5</h2><h3 id="1-為何要卸載Oracle-17-LTS"><a href="#1-為何要卸載Oracle-17-LTS" class="headerlink" title="1.為何要卸載Oracle 17 LTS?"></a>1.為何要卸載Oracle 17 LTS?</h3><p>因為Oracle為了推動17，免費提供兩年多可商用的LTS，<br>但於2023&#x2F;9 開始收費~~~<br><a href="https://www.oracle.com/tw/news/announcement/oracle-releases-java-17-2021-09-14/">https://www.oracle.com/tw/news/announcement/oracle-releases-java-17-2021-09-14/</a></p><h3 id="2-下載openJDK"><a href="#2-下載openJDK" class="headerlink" title="2.下載openJDK"></a>2.下載openJDK</h3><p>我是是直接使用Red Hat官網下載<br>只要登入帳號 即可下載JDK<br>(請下載JDK給開發用 不用JRE只能RUN)<br><a href="https://developers.redhat.com/products/openjdk/download">https://developers.redhat.com/products/openjdk/download</a></p><p><img src="https://hackmd.io/_uploads/rJY1Qf94h.png"></p><h3 id="3-先看剛下載的bin是否正常"><a href="#3-先看剛下載的bin是否正常" class="headerlink" title="3.先看剛下載的bin是否正常?"></a>3.先看剛下載的bin是否正常?</h3><p>(原本是oracle 17 現在要改下面那個red hat 的openjdk 17)<br><img src="https://hackmd.io/_uploads/HkGILG9Nn.png"><br>確定正常之後</p><h3 id="4-控制台程式集解除安裝原本的java17"><a href="#4-控制台程式集解除安裝原本的java17" class="headerlink" title="4.控制台程式集解除安裝原本的java17"></a>4.控制台程式集解除安裝原本的java17</h3><p><img src="https://hackmd.io/_uploads/HJg_iM543.png"></p><h3 id="5-如何換-把剛下載的zip解壓縮，放到你要的位置，變更環境變量"><a href="#5-如何換-把剛下載的zip解壓縮，放到你要的位置，變更環境變量" class="headerlink" title="5.如何換?把剛下載的zip解壓縮，放到你要的位置，變更環境變量"></a>5.如何換?把剛下載的zip解壓縮，放到你要的位置，變更環境變量</h3><p><a href="https://blog.csdn.net/qq_42671576/article/details/122170890">https://blog.csdn.net/qq_42671576/article/details/122170890</a></p><h4 id="5-1-你解壓得zip位置"><a href="#5-1-你解壓得zip位置" class="headerlink" title="5-1 你解壓得zip位置"></a>5-1 你解壓得zip位置</h4><p><img src="https://hackmd.io/_uploads/BJron7cEh.png"></p><h4 id="5-2-JAVA-HOME指到bin的上一層"><a href="#5-2-JAVA-HOME指到bin的上一層" class="headerlink" title="5-2 JAVA HOME指到bin的上一層"></a>5-2 JAVA HOME指到bin的上一層</h4><p><img src="https://hackmd.io/_uploads/B1kwn754h.png"></p><h4 id="5-3-看一下你的path-是不是到bin那層"><a href="#5-3-看一下你的path-是不是到bin那層" class="headerlink" title="5-3 看一下你的path 是不是到bin那層"></a>5-3 看一下你的path 是不是到bin那層</h4><p><img src="https://hackmd.io/_uploads/ryFBTQc42.png"></p><h4 id="5-4-看一下cmd你的java版本是不是成功"><a href="#5-4-看一下cmd你的java版本是不是成功" class="headerlink" title="5-4 看一下cmd你的java版本是不是成功"></a>5-4 看一下cmd你的java版本是不是成功</h4><p><img src="https://hackmd.io/_uploads/B1bq6QqVh.png"></p><h2 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h2><h3 id="1-如果你第4步驟走沒刪掉，java-home-改了-版本卻沒改"><a href="#1-如果你第4步驟走沒刪掉，java-home-改了-版本卻沒改" class="headerlink" title="1.如果你第4步驟走沒刪掉，java home 改了 版本卻沒改?"></a>1.如果你第4步驟走沒刪掉，java home 改了 版本卻沒改?</h3><p>cmd 看現在的java version沒變的話 很有可能是你還是在吃你舊版本<br>快刪掉 XD<br><a href="https://juejin.cn/post/7060141100505235464">https://juejin.cn/post/7060141100505235464</a></p><h3 id="2-openJDK其實很多家都有實作，有興趣可以參考這篇"><a href="#2-openJDK其實很多家都有實作，有興趣可以參考這篇" class="headerlink" title="2.openJDK其實很多家都有實作，有興趣可以參考這篇"></a>2.openJDK其實很多家都有實作，有興趣可以參考這篇</h3><p>OracleJDK、OpenJDK之外的Java JDK JRE JVM環境選擇<br><a href="https://klab.tw/2022/11/how-many-openjdk-distribution/">https://klab.tw/2022/11/how-many-openjdk-distribution/</a></p><h3 id="3-另外也推薦直接從Eclipse-Temurin這裡下載"><a href="#3-另外也推薦直接從Eclipse-Temurin這裡下載" class="headerlink" title="3.另外也推薦直接從Eclipse Temurin這裡下載"></a>3.另外也推薦直接從Eclipse Temurin這裡下載</h3><p><a href="https://adoptium.net/temurin/releases/">https://adoptium.net/temurin/releases/</a></p><p>以前我OpenJDK都是用AdoptOpenJDK他們家實作的，但現在AdoptOpenJDK改組，<br>變成Eclipse 基金會，red hat也加入貢獻行列~~~<br>所以AdoptOpenJDK已經停止更新，只到16而已。</p><p>參考:<br><a href="https://www-redhat-com.translate.goog/en/blog/red-hat-joins-eclipse-adoptium-working-group?_x_tr_sl=auto&amp;_x_tr_tl=zh-TW&amp;_x_tr_hl=zh-TW">https://www-redhat-com.translate.goog/en/blog/red-hat-joins-eclipse-adoptium-working-group?_x_tr_sl=auto&amp;_x_tr_tl=zh-TW&amp;_x_tr_hl=zh-TW</a></p><p><a href="https://developers.redhat.com/articles/2022/08/24/red-hat-expands-support-java-eclipse-temurin">https://developers.redhat.com/articles/2022/08/24/red-hat-expands-support-java-eclipse-temurin</a></p><h3 id="4-來聊聊OpenJDK-和JVM-虛擬機"><a href="#4-來聊聊OpenJDK-和JVM-虛擬機" class="headerlink" title="4.來聊聊OpenJDK 和JVM 虛擬機"></a>4.來聊聊OpenJDK 和JVM 虛擬機</h3><p>在實際世界中，除了red hat推動開源的還有IBM。<br><a href="https://zhuanlan.zhihu.com/p/556259768">https://zhuanlan.zhihu.com/p/556259768</a></p><h2 id="同場加映-Eclipse問題"><a href="#同場加映-Eclipse問題" class="headerlink" title="同場加映 Eclipse問題"></a>同場加映 Eclipse問題</h2><p>最後補充一個 我遇到的eclipse 沒辦法開啟的問題<br><img src="https://hackmd.io/_uploads/rJpoRmcVn.png"></p><p>這是你的jdk還是吃舊版本</p><p>打開你eclipse的實體位置<br><img src="https://hackmd.io/_uploads/Byx4149N2.png"></p><p>打開eclipse.ini<br><img src="https://hackmd.io/_uploads/SyQM1Nq42.png"></p><p>把你的vm吃的java改成你openjdk現在的位置 即可正常開啟~~~</p><hr><p>今天先分享到這邊~希望因為有時候太久沒改環境，會忘了怎麼用，自已做一個紀錄 XD</p><p>by the way…<br>hackmd 現在圖片不上傳到 <a href="https://i.imgur.com/">https://i.imgur.com</a><br>都直接傳到 <a href="https://hackmd.io/_uploads">https://hackmd.io/_uploads</a><br>所以文章不開放所有人可以閱讀的話<br>就看不到圖片惹 XD</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tech</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JAVA</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Spring的@Transactional踩坑紀錄</title>
     <link href="/2023/01/18/Spring%E7%9A%84@Transactional%E8%B8%A9%E5%9D%91%E7%B4%80%E9%8C%84/"/>
     <url>/2023/01/18/Spring%E7%9A%84@Transactional%E8%B8%A9%E5%9D%91%E7%B4%80%E9%8C%84/</url>
